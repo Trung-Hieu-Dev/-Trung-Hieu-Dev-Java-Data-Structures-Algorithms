@@ -133,5 +133,22 @@ public class LinkedList {
     //                               //
     //                               //
     ///////////////////////////////////
+    public Node removeFirst() {
+        // Step 1: Removing node
+        // Case 1: Empty List.
+        if (length == 0) return null;  // Pointer head & tail to null. And return the removed node = null
+        // Case 2: Not Empty List
+        Node temp = head; // create flag, this flag keeping the value for removed node
+        head = head.next; // pointer head to next node
+        temp.next = null; // pointer next of removed node = null
+        
+        // Step 2: decrease the length
+        length--;
+        if (length == 0) { // after removing node, if List has only 1 item, new length = 0
+            tail = null; // Pointer tail to null, this move back tail to prev node
+        }
+        
+        return temp; // return the removed node
+    }
     
 }
