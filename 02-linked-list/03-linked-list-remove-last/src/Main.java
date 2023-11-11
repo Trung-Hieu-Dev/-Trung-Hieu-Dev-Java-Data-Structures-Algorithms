@@ -4,6 +4,7 @@ public class Main {
         LinkedList myLinkedList = new LinkedList(1);
         myLinkedList.append(2);
         
+        
         // (2) Items - Returns 2 Node
         System.out.println(myLinkedList.removeLast().value);
         // (1) Item - Returns 1 Node
