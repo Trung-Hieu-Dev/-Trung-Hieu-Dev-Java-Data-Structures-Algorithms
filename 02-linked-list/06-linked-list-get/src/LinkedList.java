@@ -157,4 +157,13 @@ public class LinkedList {
     //                         //
     //                         //
     /////////////////////////////
+    public Node get(int index) {
+        // Step 1: loop to the index item
+        if (index < 0 || index >= length) return null; // Case 1: return null if index out of list
+        Node temp = head; // create a flag, set equal to head to get {value:?, next: ?}
+        for(int i = 0; i < index; i++) {
+            temp = temp.next; // Step 2: change the current node to next node
+        }
+        return temp; // Return the current node
+    }
 }
