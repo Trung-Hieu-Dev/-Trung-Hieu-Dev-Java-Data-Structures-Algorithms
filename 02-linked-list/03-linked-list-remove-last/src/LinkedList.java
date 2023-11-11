@@ -81,21 +81,29 @@ public class LinkedList {
     //                              //
     //////////////////////////////////
     public Node removeLast() {
+        // Case 1: Empty LinkedList
         if (length == 0) return null;
-        Node temp = head;
-        Node pre = head;
+        
+        // Case 2: Not Empty LinkedList
+        // Step 1: loop through entire of list until the end is null
+        Node temp = head; // flag to loop entire of list
+        Node pre = head; // variable for keeping value of temp
         while(temp.next != null) {
-            pre = temp;
-            temp = temp.next;
+            pre = temp; // keeping temp value
+            temp = temp.next; // set temp value = next node
         }
-        tail = pre;
-        tail.next = null;
-        length--;
-        if (length == 0) {
+        // Step 2: stop looping at the last node. And removing the last node by setting tail value = prev node
+        tail = pre; // set tail value == prev node
+        tail.next = null; // set linked value of the last node = null
+        length--; // decrease length of list
+        
+        // Case 3: LinkedList has only 1 element
+        if (length == 0) { // in case list length = 1. removing node will be return head & tail = null
             head = null;
             tail = null;
         }
-        return temp;
+        
+        return temp; // value of the removed node
     }
     
 }
