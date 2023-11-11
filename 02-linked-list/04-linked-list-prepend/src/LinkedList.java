@@ -112,5 +112,19 @@ public class LinkedList {
     //                           //
     //                           //
     ///////////////////////////////
+    public void prepend(int value) {
+        // Step 1: Create new node, that will be added to the LinkedList
+        Node newNode = new Node(value);
+        
+        // Step 2: Re-value for the Head Node and Pointer the current node to next node
+        if (length == 0) { // Case 1: Empty List
+            head = newNode; // pointer head to new node
+            tail = newNode; // pointer tail to new node
+        } else { // Case 2: Not Empty List
+            newNode.next = head; // pointer the added node to the next node
+            head = newNode; // pointer head to new node, that added to list
+        }
+        length++; // increase length to 1
+    }
     
 }
