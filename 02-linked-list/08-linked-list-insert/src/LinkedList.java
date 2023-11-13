@@ -188,4 +188,28 @@ public class LinkedList {
     //                         //
     //                         //
     /////////////////////////////
+    public boolean insert(int index, int value)  {
+        // Case 1: Index out of length
+        if (index < 0 || index > length) return false;
+        
+        // Case 2: Add to the beginning
+        if (index == 0) {
+            prepend(value);
+            return true;
+        }
+        
+        // Case 3: Add to the end
+        if (index == length) {
+            append(value);
+            return true;
+        }
+        
+        // Case 3: Add to the between
+        Node newNode = new Node(value);
+        Node temp = get(index - 1);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        length++;
+        return true;
+    }
 }
