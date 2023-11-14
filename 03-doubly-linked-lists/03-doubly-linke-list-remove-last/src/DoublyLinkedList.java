@@ -73,6 +73,10 @@ public class DoublyLinkedList {
         temp.next = null;
         temp.prev = null;
         length--;
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
         return temp;
     }
 }
