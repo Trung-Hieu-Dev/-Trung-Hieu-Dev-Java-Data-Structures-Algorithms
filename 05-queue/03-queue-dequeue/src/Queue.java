@@ -47,7 +47,7 @@ public class Queue {
         System.out.println("Length: " + length);
     }
     
-    // enqueue: add
+    // enqueue: add last
     public void enqueue(int value) {
         Node newNode = new Node(value);
         if (length == 0) {
@@ -58,5 +58,20 @@ public class Queue {
             last = newNode;
         }
         length++;
+    }
+    
+    // dequeue: remove first
+    public Node dequeue() {
+        if(length == 0) return null;
+        Node temp = first;
+        if(length == 1) {
+            first = null;
+            last = null;
+        } else {
+            first = first.next;
+            temp.next = null;
+        }
+        length--;
+        return temp;
     }
 }
