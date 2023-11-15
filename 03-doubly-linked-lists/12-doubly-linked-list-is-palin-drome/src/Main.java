@@ -3,35 +3,28 @@ public class Main {
         DoublyLinkedList myDLL = new DoublyLinkedList(1);
         myDLL.append(2);
         myDLL.append(3);
-        myDLL.append(4);
-        myDLL.append(5);
+        myDLL.append(2);
+        myDLL.append(1);
         
-        System.out.println("DLL before reverse():");
+        System.out.println("DLL list:");
         myDLL.printList();
         System.out.println();
         
-        myDLL.swapFirstLast();
-        System.out.println("DLL after reverse():");
-        myDLL.printList();
+        System.out.println("DLL list is Palindrome: " + myDLL.isPalindrome());
         
         
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            DLL before swapFirstLast():
+            DLL list:
             1
             2
             3
-            4
-            5
+            2
+            1
             
-            DLL before swapFirstLast():
-            5
-            4
-            3
-            2
-            1
+            DLL list is Palindrome: true
 
         */
     }
