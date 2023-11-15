@@ -6,12 +6,12 @@ public class Main {
         myDLL.append(4);
         myDLL.append(5);
         
-        System.out.println("DLL before swapFirstLast():");
+        System.out.println("DLL before reverse():");
         myDLL.printList();
         System.out.println();
         
         myDLL.swapFirstLast();
-        System.out.println("DLL after swapFirstLast():");
+        System.out.println("DLL after reverse():");
         myDLL.printList();
         
         
@@ -28,9 +28,9 @@ public class Main {
             
             DLL before swapFirstLast():
             5
-            2
-            3
             4
+            3
+            2
             1
 
         */
