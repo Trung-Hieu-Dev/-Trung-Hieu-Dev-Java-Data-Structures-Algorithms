@@ -2,25 +2,19 @@ public class Main {
     public static void main(String[] args) {
         HashTable myHashTable = new HashTable();
         
+        myHashTable.set("paint", 20);
+        myHashTable.set("bolts", 40);
         myHashTable.set("nails", 100);
         myHashTable.set("tile", 50);
         myHashTable.set("lumber", 80);
         
-        System.out.println("Lumber:");
-        System.out.println( myHashTable.get("lumber") );
+        System.out.println( myHashTable.keys() );
         
-        System.out.println("\nBolts:");
-        System.out.println( myHashTable.get("bolts") );
-
-        /*
-            EXPECTED OUTPUT:
-            ----------------
-            Lumber:
-            80
-
-            Bolts:
-            0
-
-        */
+    	/*
+        	EXPECTED OUTPUT:
+        	----------------
+        	[paint, bolts, nails, tile, lumber]
+    
+    	*/
     }
 }
