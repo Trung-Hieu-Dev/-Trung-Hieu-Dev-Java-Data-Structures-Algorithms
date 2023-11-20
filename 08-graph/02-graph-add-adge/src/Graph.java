@@ -17,4 +17,14 @@ public class Graph {
         }
         return false;
     }
+    
+    // add undirected edge
+    public boolean addEdge(String vertext1, String vertext2) {
+        if (this.adjList.get(vertext1) != null && this.adjList.get(vertext2) != null) {
+            this.adjList.get(vertext1).add(vertext2);
+            this.adjList.get(vertext2).add(vertext1);
+            return true;
+        }
+        return false;
+    }
 }
