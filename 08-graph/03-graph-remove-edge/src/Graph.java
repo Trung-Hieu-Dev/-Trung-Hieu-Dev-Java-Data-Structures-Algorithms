@@ -27,4 +27,14 @@ public class Graph {
         }
         return false;
     }
+    
+    // remove undirected edge
+    public boolean removeEdge(String vertext1, String vertext2) {
+        if (this.adjList.get(vertext1) != null && this.adjList.get(vertext2) != null) {
+            this.adjList.get(vertext1).remove(vertext2);
+            this.adjList.get(vertext2).remove(vertext1);
+            return true;
+        }
+        return false;
+    }
 }
