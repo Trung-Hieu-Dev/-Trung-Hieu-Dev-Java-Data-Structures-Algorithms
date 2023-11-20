@@ -37,4 +37,12 @@ public class Graph {
         }
         return false;
     }
+    
+    // remove vertex
+    public boolean removeVertex(String vertext1) {
+        if (this.adjList.get(vertext1) == null) return false;
+        this.adjList.forEach((vertext, edge) -> edge.remove(vertext1));
+        this.adjList.remove(vertext1);
+        return true;
+    }
 }

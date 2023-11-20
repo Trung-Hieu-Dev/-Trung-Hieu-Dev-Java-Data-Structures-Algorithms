@@ -5,28 +5,31 @@ public class Main {
         myGraph.addVertex("A");
         myGraph.addVertex("B");
         myGraph.addVertex("C");
+        myGraph.addVertex("D");
         
         myGraph.addEdge("A", "B");
         myGraph.addEdge("A", "C");
-        myGraph.addEdge("B", "C");
+        myGraph.addEdge("A", "D");
+        myGraph.addEdge("B", "D");
+        myGraph.addEdge("C", "D");
         
         
-        System.out.println("\nGraph before removeEdge():");
+        System.out.println("\nGraph before removeVertex():");
         myGraph.printGraph();
         
-        myGraph.removeEdge("A", "B");
+        myGraph.removeVertex("D");
         
-        System.out.println("\nGraph after removeEdge():");
+        System.out.println("\nGraph after removeVertex():");
         myGraph.printGraph();
-
+        
         /*
             EXPECTED OUTPUT:
             ----------------
-            Graph before removeEdge():
-            {A=[B, C], B=[A, C], C=[A, B]}
+            Graph before removeVertex():
+            {A=[B, C, D], B=[A, D], C=[A, D], D=[A, B, C]}
             
-            Graph after removeEdge():
-            {A=[C], B=[C], C=[A, B]}
+            Graph after removeVertex():
+            {A=[B, C], B=[A], C=[A]}
 
         */
     }
