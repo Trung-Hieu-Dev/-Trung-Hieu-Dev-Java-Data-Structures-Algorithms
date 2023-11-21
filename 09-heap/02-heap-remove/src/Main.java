@@ -2,33 +2,38 @@ public class Main {
     public static void main(String[] args) {
         Heap myHeap = new Heap();
         
-        myHeap.insert(99);
-        myHeap.insert(72);
-        myHeap.insert(61);
-        myHeap.insert(58);
-        
-        System.out.println("First heap: ");
-        System.out.println(myHeap.getHeap());
-        
-        System.out.println("\nAfter 100: ");
-        myHeap.insert(100);
-        System.out.println(myHeap.getHeap());
-        
-        System.out.println("\nAfter 75: ");
+        myHeap.insert(95);
         myHeap.insert(75);
+        myHeap.insert(80);
+        myHeap.insert(55);
+        myHeap.insert(60);
+        myHeap.insert(50);
+        myHeap.insert(65);
+        
+        System.out.println("Before remove");
+        System.out.println(myHeap.getHeap());
+        
+        System.out.println("\nAfter remove");
+        System.out.println("Removed: " + myHeap.remove());
+        System.out.println(myHeap.getHeap());
+        
+        System.out.println("\nAfter remove");
+        System.out.println("Removed: " + myHeap.remove());
         System.out.println(myHeap.getHeap());
         
         /*
         * Expected:
         *
-            First heap:
-            [99, 72, 61, 58]
+            Before remove:
+            [95, 75, 80, 55, 60, 50, 65]
             
-            After 100:
-            [100, 99, 61, 58, 72]
+            After remove, heap will order for the right:
+            Removed: 95
+            [80, 75, 65, 55, 60, 50]
             
-            After 75:
-            [100, 99, 75, 58, 72, 61]
+            After remove, heap will order for the left:
+            Removed: 80
+            [75, 60, 65, 55, 50]
         
         * */
         
