@@ -105,4 +105,43 @@ public class BinarySearchTree {
     public boolean rContains(int value) {
         return rContains(root, value);
     }
+    
+    // min value
+    public int mintValue(Node currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode.value;
+    }
+    
+    // recursive delete
+    private Node delete(Node currentNode, int value) {
+        // case 1: if node is not in tree
+        if (currentNode == null) return null;
+        
+        if (value < currentNode.value) {
+            currentNode.left = delete(currentNode.left, value);
+        } else if (value > currentNode.value) {
+            currentNode.right = delete(currentNode.right, value);
+        } else {
+            // find the node and delete
+            if (currentNode.left == null && currentNode.right == null) { // case 1: have no leaf
+                return null;
+            } else if (currentNode.left == null) { // case 2: have right leaf
+                currentNode = currentNode.right;
+            } else if (currentNode.right == null) { // case 3: have left leaf
+                currentNode = currentNode.left;
+            } else { // have both left and right leaf
+                int subTreeMin = mintValue(currentNode.right); // find min on the right
+                currentNode.value = subTreeMin; // copy min value to the current
+                currentNode.right = delete(currentNode.right, subTreeMin); // remove the min in subtree
+            }
+        }
+        
+        return currentNode;
+    }
+    
+    public void delete(int value) {
+        delete(root, value);
+    }
 }

@@ -17,13 +17,33 @@ public class Main {
         System.out.println("\nRoot: " + myBST.root.value);
         System.out.println("\nRoot->Left: " + myBST.root.left.value);
         System.out.println("\nRoot->Right: " + myBST.root.right.value);
+        
+        myBST.delete(2);
+        
+        /*
+         * THE LINE ABOVE CREATED THIS TREE
+         *       3
+         *    /      \
+         *   1       null
+         *
+         * */
+        
+        System.out.println("\nRoot: " + myBST.root.value);
+        System.out.println("\nRoot->Left: " + myBST.root.left.value);
+        System.out.println("\nRoot->Right: " + myBST.root.right);
 
         /*
-            EXPECTED OUTPUT:
+            BEFORE DELETE:
             ----------------
             Root: 2
             Root->Left: 1
             Root->Right: 3
+            
+            AFTER DELETE
+            --------------
+            Root: 3
+            Root->Left: 1
+            Root->Right: null
 
         */
     }
