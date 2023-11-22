@@ -67,7 +67,22 @@ public class BinarySearchTree {
     }
     
     // recursive contains
-    private boolean rContains(int value) {
+    private boolean rContains(Node currentNode, int value) {
+        // case 1: empty
+        if (currentNode == null) return false;
+        
+        // case 2: return true if value in tree
+        if (currentNode.value == value) return true;
+        
+        // recursive loop to find element
+        if (value < currentNode.value) {
+           return rContains(currentNode.left, value);
+        } else {
+            return rContains(currentNode.right, value);
+        }
+    }
     
+    public boolean rContains(int value) {
+        return rContains(root, value);
     }
 }
