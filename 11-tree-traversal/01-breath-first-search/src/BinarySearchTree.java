@@ -150,12 +150,13 @@ public class BinarySearchTree {
     }
     
     public ArrayList<Integer> BFS() {
+        Node currentNode = root;
         ArrayList<Integer> results = new ArrayList<>();
-        
         Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
+        queue.add(currentNode);
+        
         while (!queue.isEmpty()) {
-            Node currentNode = queue.remove();
+            currentNode = queue.remove();
             results.add(currentNode.value);
             
             if (currentNode.left != null) {

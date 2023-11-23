@@ -16,7 +16,7 @@ public class Main {
         * EXPECTED OUTPUT
         * ---------------
         * [47, 21, 76, 18, 27, 52, 82]
-        * 
+        *
         * */
     }
 }
