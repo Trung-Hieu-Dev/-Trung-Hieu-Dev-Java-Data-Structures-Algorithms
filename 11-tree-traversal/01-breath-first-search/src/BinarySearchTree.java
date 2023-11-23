@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     public Node root;
     
@@ -143,5 +147,26 @@ public class BinarySearchTree {
     
     public void delete(int value) {
         delete(root, value);
+    }
+    
+    public ArrayList<Integer> BFS() {
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node currentNode = queue.remove();
+            results.add(currentNode.value);
+            
+            if (currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
+            
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+        }
+        
+        return results;
     }
 }
