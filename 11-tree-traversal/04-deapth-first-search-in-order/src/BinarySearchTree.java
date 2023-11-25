@@ -215,4 +215,25 @@ public class BinarySearchTree {
         
         return results;
     }
+    
+    // depth first search in-order
+    public ArrayList<Integer> DFSInOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        class Traversal {
+            public Traversal(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traversal(currentNode.left);
+                }
+                results.add(currentNode.value);
+                if (currentNode.right != null) {
+                    new Traversal(currentNode.right);
+                }
+            }
+        }
+        
+        new Traversal(root);
+        
+        return results;
+    }
 }

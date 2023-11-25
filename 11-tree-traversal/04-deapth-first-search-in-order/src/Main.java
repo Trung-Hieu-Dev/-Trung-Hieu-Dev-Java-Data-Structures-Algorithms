@@ -13,6 +13,7 @@ public class Main {
         System.out.println(myBST.BFS());
         System.out.println(myBST.DFSPreOrder());
         System.out.println(myBST.DFSPostOrder());
+        System.out.println(myBST.DFSInOrder());
         
         /*
         * EXPECTED OUTPUT
@@ -25,6 +26,9 @@ public class Main {
         *
         * Depth First Search postorder:
         * [18, 27, 21, 52, 82, 76, 47]
+        *
+        * Depth First Search in-order:
+        * [18, 21, 27, 47, 52, 76, 82]
         * */
     }
 }
