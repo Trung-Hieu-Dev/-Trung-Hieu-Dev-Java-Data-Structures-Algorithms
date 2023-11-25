@@ -149,6 +149,7 @@ public class BinarySearchTree {
         delete(root, value);
     }
     
+    // breath first search
     public ArrayList<Integer> BFS() {
         Node currentNode = root;
         ArrayList<Integer> results = new ArrayList<>();
@@ -167,6 +168,29 @@ public class BinarySearchTree {
                 queue.add(currentNode.right);
             }
         }
+        
+        return results;
+    }
+    
+    // depth first search
+    public ArrayList<Integer> DFSPreOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        // using nested loop, but in java does not allow creating nested loop
+        // this is a trick for that (create a class and use constructor)
+        class Traversal {
+            public Traversal(Node currentNode) {
+                results.add(currentNode.value);
+                if (currentNode.left != null) {
+                    new Traversal(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traversal(currentNode.right);
+                }
+            }
+        }
+        
+        new Traversal(root);
         
         return results;
     }
