@@ -21,17 +21,21 @@ public class Main {
         return swapIndex;
     }
     
-    private static void quickSort(int[] array, int left, int right) {
+    private static void quickSortHelper(int[] array, int left, int right) {
         if (left < right) {
             int pivotIndex = pivot(array, left, right);
-            quickSort(array, left, pivotIndex - 1);
-            quickSort(array, pivotIndex + 1, right);
+            quickSortHelper(array, left, pivotIndex - 1);
+            quickSortHelper(array, pivotIndex + 1, right);
         }
+    }
+    
+    private static void quickSort(int[] array) {
+        quickSortHelper(array, 0, array.length -1);
     }
     
     public static void main(String[] args) {
         int[] array = {4,6,1,7,3,2,5};
-        quickSort(array, 0, array.length -1);
+        quickSort(array);
         System.out.println(Arrays.toString(array)); // [1, 2, 3, 4, 5, 6, 7]
     }
 }
